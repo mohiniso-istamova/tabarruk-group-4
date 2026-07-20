@@ -1,61 +1,37 @@
-<script setup lang="ts">
-import { ref } from 'vue'
+<!-- <template>
+  <div class="w-full rounded-2xl bg-[#2A2D3E]/40 backdrop-blur-md border border-white/5 flex flex-col justify-between relative overflow-hidden">
+    
+    <div 
+      v-if="item.required" 
+      class="absolute top-0 bottom-0 left-[35%] w-[1px] bg-gradient-to-b from-white/10 via-white/30 to-white/10 hidden md:block"
+    ></div>
 
-const stats = ref([
-  { 
-    id: 1, 
-    count: '27', 
-    text: 'Diqqatga sazovor joylar', 
+    <div class="p-6 flex flex-col justify-between h-full z-10">
+      <div class="flex items-center gap-4">
+        <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E53E3E] text-white">
+          <span :class="`icon-${item.iconName} text-xl`"></span>
+        </div>
+        
+        <h2 class="text-3xl font-bold text-white tracking-wide">{{ item.value }}</h2>
+      </div>
+      
+      <p class="mt-6 text-lg text-gray-400 font-normal">
+        {{ item.label }}
+      </p>
+    </div>
+    
+  </div>
+</template>
 
-    imgSrc: '/images/mosque/Mask group.svg',
-    imgClass: '-right-2 -bottom-2 w-28 h-28' 
-  },
-  { 
-    id: 2, 
-    count: '402', 
-    text: 'Manzillar', 
-
-    imgSrc: '/images/mask-svg/Mask group (1).svg',
-    imgClass: '-right-4 -bottom-4 w-28 h-28' 
-  },
-  { 
-    id: 3, 
-    count: '7', 
-    text: 'Davlatlar', 
-  
-    imgSrc: '/images/mask-svg/Mask group (2).svg',
-    imgClass: '-right-3 -bottom-3 w-28 h-28' 
+<script setup>
+defineProps({
+  item: {
+    type: Object,
+    required: true
   }
-])
-</script>
+})
+</script> -->
 
 <template>
-  <div class="pt-[20px] bg-transparent min-h-[180px] w-full">
-    <div class="flex flex-col sm:flex-row gap-4">
-      <div 
-        v-for="stat in stats" 
-        :key="stat.id"
-        class="relative overflow-hidden w-full sm:w-[260px] h-[100px] bg-[#1a1f2c] rounded-xl px-5 flex flex-col justify-center border border-gray-800 transition-all duration-300 hover:border-gray-700 group"
-      >
-   
-        <div class="z-10 pointer-events-none">
-          <h2 class="text-white text-3xl font-extrabold tracking-tight leading-none">
-            {{ stat.count }}
-          </h2>
-          <p class="text-gray-400 text-sm font-semibold mt-2">
-            {{ stat.text }}
-          </p>
-        </div>
-
-        <img 
-          :src="stat.imgSrc" 
-          :class="[
-            'absolute pointer-events-none select-none opacity-15 transition-transform duration-300 group-hover:scale-105', 
-            stat.imgClass
-          ]" 
-          alt="background-icon"
-        />
-      </div>
-    </div>
-  </div>
+  
 </template>

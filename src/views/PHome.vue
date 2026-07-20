@@ -8,6 +8,8 @@
    </div>
 </template>
 <script setup lang="ts">
+import { statsData } from '../data/statsList'
+import CStatisticCard from '../components/Cards/CStatisticCard.vue'
 import {countries} from '@/data/countries'  
 import CBanner from '@/components/Sections/CBanner.vue'
 import CAbout from '@/components/Sections/CAbout.vue'

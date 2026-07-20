@@ -1,23 +1,28 @@
 <template>
-    <div class="mt-40 bg-[url('https://karibu-africa.ru/wp-content/uploads/2024/06/afr-6.webp')] py-30 px-20">
-        <CSearch :data="searchResult"/>
-
+ <div class="mt-50">
+   <div class=" grid grid-cols-3 container gap-4">
+    <CCountryStatisticCard class="bg-gray-600/30 p-6 rounded-xl backdrop-blur-xl"/>
+    <div class="col-span-2 grid grid-cols-4 bg-gray-600/30 p-6 rounded-xl backdrop-blur-xl">
+      <CCountryStatisticCard class="border-r pr-3 border-white mr-4"  
+      v-for="(el, idx) in data.splice(1,1)"
+      v-bind="data"
+      />
     </div>
+  </div>
+ </div>
 </template>
 <script setup lang="ts">
-import CSearch from '@/components/Forms/CSearch.vue';
-import { ref } from 'vue';
-
-const searchResult = ref([]); 
-
-async function searchValue() {
-  const res = await fetch('https://dummyjson.com/products');
-  const data = await res.json();
-  
-  searchResult.value = data.products; 
-  
-  console.log(searchResult.value);
-}
-
-searchValue();
+import CCountryStatisticCard from '@/components/Cards/CCountryStatisticCard.vue';
+const data = [
+  {
+    icon: 'icon-mosque',
+    number: 175,
+    title: 'Diqqatga sazovor joylar'
+  },
+   {
+    icon: 'icon-mosque',
+    number: 37,
+    title: 'Aholi soni'
+  }
+]
 </script>
